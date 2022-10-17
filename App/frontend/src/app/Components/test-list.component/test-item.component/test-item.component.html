@@ -1,0 +1,61 @@
+<div class="item_container">
+  <div class="item_info_row" *ngIf="!isTestStart; else testStart">
+    <div class="test_info">
+      <div class="selected_title">
+        Title: {{SelectedItem?.name}}
+      </div>
+      <div class="description">
+        Description: {{SelectedItem?.description}}
+      </div>
+    </div>
+    <div class="control">
+      <div class="check">
+        <mat-checkbox class="example-margin" [(ngModel)]="isPrepared">I agree to start</mat-checkbox>
+      </div>
+      <div class="control_btn">
+        <button mat-raised-button color="warn" (click)=" returnBack()">Back</button>
+        <button mat-raised-button color="success" (click)="onProceed()">Proceed</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #testStart>
+    <div class="test_row" *ngIf="!isTestFinished; else finish">
+      <div class="test_params">
+        <div class="question">
+          {{SelectedItem.questions[questionCount].title}}
+        </div>
+        <mat-radio-group class="options" [(ngModel)]="selectedOptions[questionCount]">
+          <mat-radio-button *ngFor="let option of SelectedItem?.questions[questionCount].options" [value]="option">
+            {{option.letter}} {{option.text}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="next_control">
+        <button mat-raised-button color="success" (click)="onNextQuestion()"> NEXT -> </button>
+      </div>
+    </div>
+
+    <ng-template #finish>
+      <div class="finished_card">
+        <div class="test_results">
+          <div>
+            Your test result: {{onEstimate()}}
+          </div>
+          <div *ngFor="let answer of selectedOptions; let i = index">
+            <div>
+              {{i + 1}}. {{answer?.isRight}}
+            </div>
+          </div>
+          <div>
+
+          </div>
+        </div>
+        <div class="finis_back">
+          <button mat-raised-button color="warn" (click)=" returnBack()">Back to test list</button>
+        </div>
+      </div>
+    </ng-template>
+
+  </ng-template>
+</div>

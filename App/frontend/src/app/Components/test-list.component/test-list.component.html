@@ -1,0 +1,18 @@
+<div class="test_list_container">
+    <div class="test_list_row" *ngIf="!selectedTest; else selected">
+        <div *ngFor="let test of tests">
+            <div class="item">
+                <div class="title">
+                    Test title : {{test.name}}
+                </div>
+                <div>
+                    <button mat-raised-button color="accent" (click)="getTestById(test.id)">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #selected>
+        <app-test-item [SelectedItem]="selectedTest" (returnToTests)="onBack()"></app-test-item>
+    </ng-template>
+</div>

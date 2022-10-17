@@ -1,0 +1,43 @@
+.test_list_container {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(212, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.test_list_row {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  height: 60%;
+  width: 60%;
+  background-color: hsl(246, 48%, 67%);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 20px;
+  border: 1px solid white;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.title {
+  color: white;
+  font-size: large;
+  font-weight: 500;
+}
+
+app-test-item {
+  height: 100%;
+  width: 100%;
+}

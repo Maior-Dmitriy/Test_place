@@ -1,0 +1,119 @@
+.item_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item_info_row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  height: 60%;
+  width: 60%;
+  background-color: hsl(216, 81%, 54%);
+}
+
+
+.test_info {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: x-large;
+  font-weight: 700;
+
+  div {
+    margin-top: 20px;
+  }
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    margin-top: 20px;
+  }
+
+  .check {
+    color: white;
+    font-size: x-large;
+    font-weight: 500;
+  }
+
+  .control_btn {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.test_row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  height: 60%;
+  width: 60%;
+  background-color: hsl(216, 81%, 54%);
+
+  .test_params {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .next_control {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+
+  .question {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: x-large;
+  }
+
+  .test_option {
+    margin-top: 10px;
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+
+  mat-radio-button {
+    margin-top: 10px;
+    color: white;
+  }
+}
+
+.finished_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  height: 60%;
+  width: 60%;
+  background-color: hsl(216, 81%, 54%);
+  color: white;
+  font-weight: 700;
+  font-size: x-large;
+}
+
+.test_results {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    margin-top: 10px;
+  }
+}
+
+.finis_back {
+  display: flex;
+  justify-content: center;
+}
